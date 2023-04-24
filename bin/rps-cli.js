@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 // Code goes here (import relevant function from rpsls.js)
-// Do I need to import minimist? -> Include just in case
+// Do I need to import minimist? -> Include just in case | Does '' vs. "" matter for import statements here?
 import { rps } from '../lib/rpsls.js'
-import minimist from 'minimist'
+import minimist from "minimist"
 
 // Same structure as previous assignments
 const arg2 = minimist(process.argv.slice(2)); 
@@ -18,15 +18,16 @@ if (arg2.help_m || arg2.h){ // Reference documentation for letter to put after '
 if (arg2.rules_m || arg2.r){ // Reference documentation for letter to put after '.'
     // Simply return the help message
     rules_m();
-    // Don't forget to use 'process.exit()'
+    // Don't forget to use 'process.exit()' just like above
     process.exit(0);
 }
 
+// Will utilize the following for later
 const choice2 = arg2._[0]
 
 // Do a try-catch statement/block here (look at online documentation)
 try {
-    // Output in console
+    // Output in console (reference notes on 'stringify' in repository to see how it works)
     console.log(JSON.stringify(rps(choice2)));
 } catch (e) { // You can also put 'Exception e'
     help_m();
@@ -35,7 +36,7 @@ try {
     process.exit(0);
 }
 
-// Display this help message and exit (use documentation from repository)
+// Display this help message and exit (use documentation from repository) | Pay attention to quotes (`) used here
 function help_m(){
     // Output the following onto the console
     console.log(`Usage: node-rps [SHOT]
@@ -52,7 +53,7 @@ function help_m(){
 
 }
 
-// Display the rules and exit (also use documentation from repository)
+// Display the rules and exit (also use documentation from repository) | Pay attention to quotes (`) used here
 function rules_m(){
     console.log(`Rules for Rock Paper Scissors:
 
