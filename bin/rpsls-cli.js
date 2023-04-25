@@ -1,23 +1,24 @@
 #!/usr/bin/env node
 
-// Code goes here (copy syntax from other bin file and make necessary changes)
-// Do I need to import minimist? -> Yes, probably | Does '' vs. "" matter for import statements here?
-import { rpsls } from "../lib/rpsls.js"
+// Code goes here (copy syntax from other bin file and make necessary changes) | Import rpsls just like in repo documentation
+// Do I need to import minimist? -> Yes, probably | Does '' vs. "" matter for import statements here? -> Nope
 import minimist from "minimist"
+import { rpsls } from "../lib/rpsls.js"
 
 // Same structure as previous assignments
 const arg2 = minimist(process.argv.slice(2)); 
 
-if (arg2.help_m || arg2.h){ // Reference documentation for letter to put after '.'
+if (arg2.help_me || arg2.h){ // Reference documentation for letter to put after '.'
     // Simply return the help message
-    help_m();
+    help_me();
     // Don't forget to use 'process.exit()'
     process.exit(0);
 }
 
+
 if (arg2.rules_m || arg2.r){ // Reference documentation for letter to put after '.'
     // Simply return the help message
-    rules_m();
+    rules_doc();
     // Don't forget to use 'process.exit()' just like above
     process.exit(0);
 }
@@ -30,14 +31,14 @@ try {
     // Output in console (reference notes on 'stringify' in repository to see how it works)
     console.log(JSON.stringify(rpsls(choice2)));
 } catch (e) { // You can also put 'Exception e'
-    help_m();
-    rules_m();
+    help_me();
+    rules_doc();
     // As always, don't forget to use 'process.exit()'
     process.exit(0);
 }
 
 // Display this help message and exit (use documentation from repository) | Update: Change the following 
-function help_m(){
+function help_me(){
     // Output the following onto the console
     console.log(`Usage: node-rpsls [SHOT]
     Play the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!
@@ -54,7 +55,7 @@ function help_m(){
 }
 
 // Display the rules and exit (also use documentation from repository) | Update: Change this also
-function rules_m(){
+function rules_doc(){
     console.log(`Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
 
     - Scissors CUTS Paper
@@ -69,5 +70,5 @@ function rules_m(){
     - Rock CRUSHES Scissors`);
 }
 
-// Do I need to utilize a 'process.exit()' here? -> Probably not
-// process.exit(0);
+// Do I need to utilize a 'process.exit()' here? -> Include in case
+process.exit(0);
