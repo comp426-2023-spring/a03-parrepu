@@ -2,7 +2,7 @@
 
 // Code goes here (copy syntax from other bin file and make necessary changes)
 // Do I need to import minimist? -> Yes, probably | Does '' vs. "" matter for import statements here?
-import { rpsls } from '../lib/rpsls.js'
+import { rpsls } from '/lib/rpsls.js'
 import minimist from "minimist"
 
 // Same structure as previous assignments
