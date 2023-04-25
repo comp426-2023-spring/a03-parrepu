@@ -8,25 +8,32 @@ import { rps } from '../lib/rpsls.js'
 // Same structure as previous assignments
 const arg2 = minimist(process.argv.slice(2)); 
 
-if (arg2.help_m){ 
+if (arg2.help_me){ 
     // Simply return the help message
-    help_m();
+    help_me();
     // Don't forget to use 'process.exit()'
     process.exit(0);
 }
 
-if (arg2.h) { // Reference documentation for letter to put after '.' 
+if (arg2.h) { // Reference documentation for letter to put after '.' (Same structure as if-statment above)
     // Simply return the help message
-    help_m();
+    help_me();
     // Don't forget to use 'process.exit()'
     process.exit(0);
 }
 
-if (arg2.rules_m || arg2.r){ // Reference documentation for letter to put after '.'
+if (arg2.rules_doc){ 
     // Simply return the help message
-    rules_m();
+    rules_doc();
     // Don't forget to use 'process.exit()' just like above
     process.exit(0);
+}
+
+if (arg2.r) { // Reference documentation for letter to put after '.' (Same structure as if-statment above)
+  // Simply return the help message
+  rules_doc();
+  // Don't forget to use 'process.exit()' just like above
+  process.exit(0);  
 }
 
 // Will utilize the following for later
@@ -37,14 +44,14 @@ try {
     // Output in console (reference notes on 'stringify' in repository to see how it works)
     console.log(JSON.stringify(rps(choice2)));
 } catch (e) { // You can also put 'Exception e'
-    help_m();
-    rules_m();
+    help_me();
+    rules_doc();
     // As always, don't forget to use 'process.exit()'
     process.exit(0);
 }
 
 // Display this help message and exit (use documentation from repository) | Pay attention to quotes (`) used here
-function help_m(){
+function help_me(){
     // Output the following onto the console
     console.log(`Usage: node-rps [SHOT]
     Play Rock Paper Scissors (RPS)
@@ -61,7 +68,7 @@ function help_m(){
 }
 
 // Display the rules and exit (also use documentation from repository) | Pay attention to quotes (`) used here
-function rules_m(){
+function rules_doc(){
     console.log(`Rules for Rock Paper Scissors:
 
         - Scissors CUTS Paper
