@@ -40,7 +40,7 @@ if (arg2.r) { // Reference documentation for letter to put after '.' (Same struc
 try {
     // Output in console (reference notes on 'stringify' in repository to see how it works)
     console.log(JSON.stringify(rps(arg2._[0])));
-} catch (error) { // You can also put 'Exception e'
+} catch (error) { // You can also put 'error'
     help_me();
     rules_doc();
     // As always, don't forget to use 'process.exit()'
@@ -74,5 +74,5 @@ function rules_doc(){
         - Rock CRUSHES Scissors)`);
 }
 
-// Do I need to utilize a 'process.exit()' here?
-// process.exit(0);
+// Do I need to utilize a 'process.exit()' here? -> Include in case
+process.exit(0);
