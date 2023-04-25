@@ -36,14 +36,11 @@ if (arg2.r) { // Reference documentation for letter to put after '.' (Same struc
   process.exit(0);  
 }
 
-// Will utilize the following for later
-// const choice2 = arg2._[0]
-
 // Do a try-catch statement/block here (look at online documentation)
 try {
     // Output in console (reference notes on 'stringify' in repository to see how it works)
     console.log(JSON.stringify(rps(arg2._[0])));
-} catch (e) { // You can also put 'Exception e'
+} catch (error) { // You can also put 'Exception e'
     help_me();
     rules_doc();
     // As always, don't forget to use 'process.exit()'
@@ -69,6 +66,7 @@ function help_me(){
 
 // Display the rules and exit (also use documentation from repository) | Pay attention to quotes (`) used here
 function rules_doc(){
+    // Output the following into the console
     console.log(`Rules for Rock Paper Scissors:
 
         - Scissors CUTS Paper
