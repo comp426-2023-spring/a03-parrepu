@@ -1,14 +1,21 @@
 #!/usr/bin/env node
 
 // Code goes here (import relevant function from rpsls.js)
-// Do I need to import minimist? -> Include just in case | Does '' vs. "" matter for import statements here?
-import { rps } from '../lib/rpsls.js'
+// Do I need to import minimist? -> Yes, include just in case | Does '' vs. "" matter for import statements here? -> Nope
 import minimist from "minimist"
+import { rps } from '../lib/rpsls.js'
 
 // Same structure as previous assignments
 const arg2 = minimist(process.argv.slice(2)); 
 
-if (arg2.help_m || arg2.h){ // Reference documentation for letter to put after '.'
+if (arg2.help_m){ 
+    // Simply return the help message
+    help_m();
+    // Don't forget to use 'process.exit()'
+    process.exit(0);
+}
+
+if (arg2.h) { // Reference documentation for letter to put after '.' 
     // Simply return the help message
     help_m();
     // Don't forget to use 'process.exit()'
