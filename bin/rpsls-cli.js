@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Code goes here (copy syntax from other bin file and make necessary changes) | Import rpsls just like in repo documentation
+// Code goes here (Mostly the same structure as the other bin file) | Import rpsls just like in repo documentation
 // Do I need to import minimist? -> Yes, probably | Does '' vs. "" matter for import statements here? -> Nope
 import minimist from "minimist"
 import { rpsls } from "../lib/rpsls.js"
@@ -37,21 +37,18 @@ if (arg2.r) { // Reference documentation for letter to put after '.'
     process.exit(0);
 }
 
-// Will utilize the following for later
-const choice2 = arg2._[0]
-
 // Do a try-catch statement/block here (look at online documentation)
 try {
     // Output in console (reference notes on 'stringify' in repository to see how it works)
-    console.log(JSON.stringify(rpsls(choice2)));
-} catch (e) { // You can also put 'Exception e'
+    console.log(JSON.stringify(rpsls(arg2._[0])));
+} catch (error) { // You can also put 'Exception e'
     help_me();
     rules_doc();
     // As always, don't forget to use 'process.exit()'
     process.exit(0);
 }
 
-// Display this help message and exit (use documentation from repository) | Update: Change the following 
+// Display this help message and exit (use documentation from repository) | Update: Changed the following 
 function help_me(){
     // Output the following onto the console
     console.log(`Usage: node-rpsls [SHOT]
@@ -68,8 +65,9 @@ function help_me(){
 
 }
 
-// Display the rules and exit (also use documentation from repository) | Update: Change this also
+// Display the rules and exit (also use documentation from repository) | Update: Changed the following
 function rules_doc(){
+    // Output the following onto the console
     console.log(`Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
 
     - Scissors CUTS Paper

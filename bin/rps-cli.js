@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-// Code goes here (import relevant function from rpsls.js)
+// Code goes here (import relevant function from rpsls.js just like in repo documentation)
 // Do I need to import minimist? -> Yes, include just in case | Does '' vs. "" matter for import statements here? -> Nope
 import minimist from "minimist"
-import {rps} from "../lib/rpsls.js"
+import { rps } from "../lib/rpsls.js"
 
 // Same structure as previous assignments
 const arg2 = minimist(process.argv.slice(2)); 
