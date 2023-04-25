@@ -3,7 +3,7 @@
 // Code goes here (import relevant function from rpsls.js)
 // Do I need to import minimist? -> Yes, include just in case | Does '' vs. "" matter for import statements here? -> Nope
 import minimist from "minimist"
-import { rps } from '../lib/rpsls.js'
+import {rps} from '../lib/rpsls.js'
 
 // Same structure as previous assignments
 const arg2 = minimist(process.argv.slice(2)); 
@@ -37,12 +37,12 @@ if (arg2.r) { // Reference documentation for letter to put after '.' (Same struc
 }
 
 // Will utilize the following for later
-const choice2 = arg2._[0]
+// const choice2 = arg2._[0]
 
 // Do a try-catch statement/block here (look at online documentation)
 try {
     // Output in console (reference notes on 'stringify' in repository to see how it works)
-    console.log(JSON.stringify(rps(choice2)));
+    console.log(JSON.stringify(rps(arg2._[0])));
 } catch (e) { // You can also put 'Exception e'
     help_me();
     rules_doc();
